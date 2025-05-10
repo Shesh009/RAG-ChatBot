@@ -1,50 +1,54 @@
-# 💬 LLM-based RAG Chatbot
+#  LLM-based RAG Chatbot
 
 A lightweight **Retrieval-Augmented Generation (RAG)** chatbot powered by Google's Gemini 2.0 Flash model, DuckDuckGo search, and web scraping. The system includes a Flask backend for contextual search-based response generation and a Streamlit frontend chat UI.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 .
-├── backend/
-│   ├── app.py               # Flask RAG backend
-│   └── .env                 # Environment variables (Gemini API key)
-├── frontend/
+├── flask_app/               # Flask RAG
+│   ├── app.py               # backend
+|   ├── Dockerfile           # Dockerfile for backend
+│   
+├── streamlit_app/
 │   └── app.py               # Streamlit chat interface
+|   ├── Dockerfile           # Dockerfile for frontend
 ├── requirements.txt
+├── docker-compose           # Docker compose file
 └── README.md
+└── .env                 # Environment variables  (Gemini API key)
 ```
 
 ---
 
-## 🧠 Core Features
+##  Core Features
 
-- 🔁 **Conversational Memory** using session-based in-memory history
-- 🌐 **Real-time Web Search** via DuckDuckGo HTML scraping
-- 🧹 **Web Scraping & Content Summarization** from top search links
-- 🧠 **LLM Integration** using Google Gemini 2.0 Flash
-- 💬 **Streamlit UI** for chat-style interaction
-- 🛡️ Basic **prompt contextualization** and standalone question formulation
+-  **Conversational Memory** using session-based in-memory history
+-  **Real-time Web Search** via DuckDuckGo HTML scraping
+-  **Web Scraping & Content Summarization** from top search links
+-  **LLM Integration** using Google Gemini 2.0 Flash
+-  **Streamlit UI** for chat-style interaction
+-  Basic **prompt contextualization** and standalone question formulation
 
 ---
 
-## ⚙️ Setup Instructions
+##  Setup Instructions
 
-### 🔐 Prerequisites
+###  Prerequisites
 
 - Python 3.9+
 - Google Gemini API access
 - Streamlit
 - Flask
 
-### 🔧 Installation
+###  Installation
 
 ```bash
 # Clone the repo
-git clone https://github.com/your-username/rag-chatbot.git
-cd rag-chatbot
+git clone https://github.com/Shesh009/RAG-ChatBot
+cd RAG-Chatbot
 
 # Set up virtual environment
 python -m venv venv
@@ -54,9 +58,9 @@ source venv/bin/activate   # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 🌐 Environment Variables
+###  Environment Variables
 
-Create a `.env` file in the backend directory:
+Put your Google API key in the .env file :
 
 ```env
 GEMINI_API_KEY=your_google_gemini_api_key
@@ -64,29 +68,43 @@ GEMINI_API_KEY=your_google_gemini_api_key
 
 ---
 
-## 🚀 Running the Application
-
-### 1. Start the Flask Backend
-
+## Running the Application
+### Option 1: Run Manually
+#### 1. Start the Flask Backend
 ```bash
-cd backend
+cd flask_app
 python app.py
 ```
+Backend will be available at: http://localhost:5001
 
-Runs at `http://localhost:5001`
-
-### 2. Start the Streamlit Frontend
-
+#### 2. Start the Streamlit Frontend
 ```bash
-cd frontend
+cd streamlit_app
 streamlit run app.py
 ```
-
-Runs at `http://localhost:8501`
+Frontend will be available at: http://localhost:8501
 
 ---
 
-## 🔄 Workflow & Architecture
+### Option 2: Run with Docker Compose
+1. Build the Docker Images
+```bash
+docker-compose build
+```
+
+2. Start the Containers
+```bash
+docker-compose up
+```
+Once running:
+
+Frontend: http://localhost:8501
+
+Backend: http://localhost:5001
+
+Docker will automatically set up and link both services for you.
+
+##  Workflow & Architecture
 
 ```mermaid
 sequenceDiagram
@@ -114,7 +132,7 @@ sequenceDiagram
 
 ---
 
-## 🧪 Example Query Flow
+##  Example Query Flow
 
 1. User: "What's the latest on OpenAI's GPT-5?"
 2. Backend:
@@ -126,7 +144,7 @@ sequenceDiagram
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 - `Flask` – lightweight backend framework
 - `Streamlit` – chat frontend
@@ -142,26 +160,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚧 Limitations
-
-- No long-term memory or DB-backed sessions
-- Web scraping may break if DuckDuckGo layout changes
-- Lacks fine-grained auth or access control
-- No citation or factual verification of results
-
----
-
-## 🧩 Potential Enhancements
-
-- 🔐 Add JWT Auth + secure session storage
-- 🔁 Persist chat history to a database (Redis, SQLite)
-- 📚 Add source attribution and citation in LLM answers
-- 🧼 Improve scraping with newspaper3k or readability
-- 🧠 Integrate document embeddings + semantic RAG
-
----
-
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repo
 2. Create a feature branch (`git checkout -b feature-name`)
@@ -171,12 +170,7 @@ pip install -r requirements.txt
 
 ---
 
-## 📄 License
 
-MIT License. Feel free to use, modify, and share with attribution.
-
----
-
-## 📬 Contact
+##  Contact
 
 Questions or feedback? Open an issue or email [sheshusheshu035@gmail.com].

@@ -67,7 +67,7 @@ def scrape_articles(urls):
             contents.append(text.strip())
         except Exception as e:
             print(f"[ERROR] Failed scraping {url}: {e}")
-    return "\n\n".join(contents)[:100000]  # limit context
+    return "\n\n".join(contents)[:100000]
 
 def answer_question(context, question, history):
     prompt = (

@@ -13,8 +13,6 @@ model = genai.GenerativeModel('gemini-2.0-flash')
 app = Flask(__name__)
 chat_history_store = defaultdict(list)
 
-# --- UTILS ---
-
 def update_chat_history(session_id, role, content):
     chat_history_store[session_id].append({"role": role, "content": content})
 
@@ -36,7 +34,7 @@ def contextualize_query(session_id, current_query):
         return response.text.strip()
     except Exception as e:
         print(f"[ERROR] Gemini contextualize_query failed: {e}")
-        return current_query  # fallback
+        return current_query 
 
 def search_duckduckgo(query, max_results=5):
     print(f"[INFO] Searching DuckDuckGo for: {query}")
@@ -109,7 +107,7 @@ def handle_query():
         answer = answer_question(context, contextual_query, get_chat_history(session_id))
         update_chat_history(session_id, "assistant", answer)
 
-        print(f"[RESPONSE] {answer[:300]}...")  # preview only
+        print(f"[RESPONSE] {answer[:300]}...")
         return jsonify({"answer": answer}), 200
 
     except Exception as e:

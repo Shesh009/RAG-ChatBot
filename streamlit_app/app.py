@@ -13,32 +13,40 @@ if "chat_history" not in st.session_state:
 
 query = st.chat_input("Ask a question...")
 
+backend_urls = [
+    "http://llm_search_template_backend_1:5001/query",  
+    "http://localhost:5001/query"                       
+]
+
 if query:
     st.session_state.chat_history.append({"role": "user", "content": query})
 
-    try:
-        res = requests.post(
-            "http://llm_search_template_backend_1:5001/query",
-            json={
-                "query": query,
-                "session_id": st.session_state.session_id
-            },
-            timeout=30  # increased timeout
-        )
+    res = None
+    for url in backend_urls:
+        try:
+            res = requests.post(
+                url,
+                json={
+                    "query": query,
+                    "session_id": st.session_state.session_id
+                },
+                timeout=30
+            )
+            print(f"[DEBUG] Trying URL: {url}")
+            print(f"[DEBUG] Status: {res.status_code}")
+            print(f"[DEBUG] Body: {res.text}")
+            if res.status_code == 200:
+                break
+        except requests.exceptions.RequestException as e:
+            print(f"[ERROR] Failed to connect to {url}: {e}")
 
-        print(f"[DEBUG] Status: {res.status_code}")
-        print(f"[DEBUG] Body: {res.text}")
-
-        if res.status_code == 200:
-            try:
-                answer = res.json().get("answer", "No answer received.")
-            except Exception as e:
-                answer = f"Failed to parse JSON: {e}"
-        else:
-            answer = f"Error from server: {res.status_code}"
-
-    except requests.exceptions.RequestException as e:
-        answer = f"The chatbot is currently offline or unreachable.\n\nDetails: {e}"
+    if res and res.status_code == 200:
+        try:
+            answer = res.json().get("answer", "No answer received.")
+        except Exception as e:
+            answer = f"Failed to parse JSON: {e}"
+    else:
+        answer = "The chatbot is currently offline or unreachable."
 
     st.session_state.chat_history.append({"role": "assistant", "content": answer})
 

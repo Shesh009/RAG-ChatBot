@@ -139,6 +139,7 @@ sequenceDiagram
     Flask Backend-->>Streamlit UI: Return answer
     Streamlit UI-->>User: Render answer
 ```
+![Image1](images/architecture.png)
 
 ---
 

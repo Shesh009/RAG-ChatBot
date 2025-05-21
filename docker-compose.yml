@@ -2,22 +2,24 @@ version: "3.8"
 services:
   frontend:
     build:
-      context: ./  
-      dockerfile: streamlit_app/Dockerfile  
+      context: .
+      dockerfile: streamlit_app/Dockerfile
+    image: sheshu009/rag-frontend:latest
     ports:
-      - "8501:8501"  
+      - "8501:8501"
     environment:
-      - GEMINI_API_KEY=${GEMINI_API_KEY}  
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     volumes:
-      - ./streamlit_app:/app  
+      - ./streamlit_app:/app
 
   backend:
     build:
-      context: ./  
-      dockerfile: flask_app/Dockerfile  
+      context: .
+      dockerfile: flask_app/Dockerfile
+    image: sheshu009/rag-backend:latest
     ports:
-      - "5001:5001"  
+      - "5001:5001"
     environment:
-      - GEMINI_API_KEY=${GEMINI_API_KEY}  
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
     volumes:
-      - ./flask_app:/app 
+      - ./flask_app:/app

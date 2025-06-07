@@ -7,7 +7,7 @@ A lightweight **Retrieval-Augmented Generation (RAG)** chatbot powered by Google
 ## Project Structure
 
 ```
-.
+RAG-Chatbot
 |
 ├── Backend/                    # Backend service for LLM RAG operations
 │   ├── app.py                    # Flask API entry point for /query route

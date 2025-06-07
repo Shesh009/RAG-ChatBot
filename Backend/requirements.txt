@@ -1,0 +1,11 @@
+# Backend
+Flask==2.0.3
+Werkzeug==2.0.3
+python-dotenv
+requests
+beautifulsoup4
+google-generativeai
+transformers 
+sentence-transformers 
+qdrant-client 
+langchain

@@ -1,8 +1,11 @@
+import logging
 import time
 import httpx
 from qdrant_client import QdrantClient
 from qdrant_client.models import VectorParams, Distance
 from sentence_transformers import SentenceTransformer
+
+logger = logging.getLogger(__name__)
 
 class QdrantManager:
     def __init__(self, collection_name="chat_history"):
@@ -20,6 +23,7 @@ class QdrantManager:
             for _ in range(retries):
                 try:
                     if httpx.get(url).status_code == 200:
+                        logger.info(f"Qdrant available at {host}")
                         return host
                 except httpx.ConnectError:
                     time.sleep(delay)
@@ -30,6 +34,7 @@ class QdrantManager:
         for _ in range(retries):
             try:
                 if httpx.get(url).status_code == 200:
+                    logger.info("Qdrant became available.")
                     return
             except httpx.ConnectError:
                 time.sleep(delay)
@@ -38,19 +43,23 @@ class QdrantManager:
     def _ensure_collection(self):
         try:
             self.client.get_collection(self.collection_name)
+            logger.info("Qdrant collection already exists.")
         except Exception:
+            logger.info("Creating new Qdrant collection.")
             self.client.create_collection(
                 collection_name=self.collection_name,
                 vectors_config=VectorParams(size=384, distance=Distance.COSINE)
             )
 
     def add_texts(self, session_id, texts):
+        logger.info(f"Adding texts to Qdrant for session: {session_id}")
         embeddings = self.embedder.encode(texts)
         points = [{"id": i, "vector": emb, "payload": {"session_id": session_id, "text": text}}
                   for i, (text, emb) in enumerate(zip(texts, embeddings))]
         self.client.upsert(collection_name=self.collection_name, points=points)
 
     def search_similar(self, query, session_id, k=5):
+        logger.info(f"Searching similar documents for session: {session_id}")
         query_vector = self.embedder.encode([query])[0]
         results = self.client.search(collection_name=self.collection_name, query_vector=query_vector, limit=k)
         return [res.payload["text"] for res in results]

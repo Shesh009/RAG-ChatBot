@@ -27,5 +27,6 @@ class BackendClient:
             except requests.exceptions.RequestException as e:
                 logger.error(f"Error contacting backend {url}: {e}")
         
+        # If all attempts fail
         logger.error("All backend attempts failed.")
         return {"answer": "The chatbot is currently offline or unreachable.", "urls": []}

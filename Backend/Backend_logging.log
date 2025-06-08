@@ -66,3 +66,22 @@
 2025-06-08 12:59:58,420 | httpx | INFO | HTTP Request: POST http://localhost:6333/collections/chat_history/points/search "HTTP/1.1 200 OK"
 2025-06-08 13:00:02,140 | chat_service | INFO | Query handled successfully for session 593b1879-77d8-48ff-b80d-0e3ec1142ed1.
 2025-06-08 13:00:02,144 | werkzeug | INFO | 127.0.0.1 - - [08/Jun/2025 13:00:02] "POST /query HTTP/1.1" 200 -
+2025-06-08 13:05:34,549 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-08 13:05:34,584 | werkzeug | INFO |  * Restarting with watchdog (windowsapi)
+2025-06-08 13:05:59,172 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-08 13:05:59,177 | werkzeug | WARNING |  * Debugger is active!
+2025-06-08 13:05:59,186 | werkzeug | INFO |  * Debugger PIN: 447-936-445
+2025-06-08 13:05:59,459 | werkzeug | WARNING |  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-06-08 13:05:59,459 | werkzeug | INFO |  * Running on http://192.168.43.208:5001/ (Press CTRL+C to quit)
+2025-06-08 13:06:16,239 | __main__ | INFO | Incoming query: 'I want to know about Exception Handling' | Session: 42210e3b-40d7-42ec-836c-b05c1b99e688
+2025-06-08 13:06:16,239 | chat_service | INFO | Handling user query for session: 42210e3b-40d7-42ec-836c-b05c1b99e688
+2025-06-08 13:06:18,178 | search_scraper | INFO | Searching DuckDuckGo for: I want to know about Exception Handling. Please provide information about what it is, how it works, and its purpose.
+2025-06-08 13:06:20,527 | search_scraper | INFO | Found 5 URLs
+2025-06-08 13:06:20,527 | search_scraper | INFO | Scraping content from 5 URLs
+2025-06-08 13:06:28,093 | qdrant_manager | INFO | Adding texts to Qdrant for session: 42210e3b-40d7-42ec-836c-b05c1b99e688
+2025-06-08 13:06:28,847 | httpx | INFO | HTTP Request: PUT http://localhost:6333/collections/chat_history/points?wait=true "HTTP/1.1 200 OK"
+2025-06-08 13:06:28,849 | qdrant_manager | INFO | Searching similar documents for session: 42210e3b-40d7-42ec-836c-b05c1b99e688
+2025-06-08 13:06:28,904 | httpx | INFO | HTTP Request: POST http://localhost:6333/collections/chat_history/points/search "HTTP/1.1 200 OK"
+2025-06-08 13:06:34,104 | chat_service | INFO | Query handled successfully for session 42210e3b-40d7-42ec-836c-b05c1b99e688.
+2025-06-08 13:06:34,106 | werkzeug | INFO | 127.0.0.1 - - [08/Jun/2025 13:06:34] "POST /query HTTP/1.1" 200 -

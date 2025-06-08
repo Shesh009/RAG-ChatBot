@@ -26,3 +26,20 @@
 2025-06-08 12:59:32,793 | __main__ | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] Assistant response: The chatbot is currently offline or unreachable....
 2025-06-08 12:59:32,793 | session_manager | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] Assistant message added
 2025-06-08 12:59:41,621 | session_manager | INFO | New session started: 593b1879-77d8-48ff-b80d-0e3ec1142ed1
+2025-06-08 12:59:43,924 | __main__ | INFO | [Session 593b1879-77d8-48ff-b80d-0e3ec1142ed1] User asked: What are the uses of Exception Handling in python
+2025-06-08 12:59:43,930 | session_manager | INFO | [Session 593b1879-77d8-48ff-b80d-0e3ec1142ed1] User message added
+2025-06-08 12:59:43,934 | backend_client | INFO | Sending query for session 593b1879-77d8-48ff-b80d-0e3ec1142ed1 to backend
+2025-06-08 12:59:46,639 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x00000149F216A570>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 13:00:02,146 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-08 13:00:02,147 | __main__ | INFO | [Session 593b1879-77d8-48ff-b80d-0e3ec1142ed1] Assistant response: Exception handling in Python is a powerful mechanism used to manage errors that ...
+2025-06-08 13:00:02,147 | session_manager | INFO | [Session 593b1879-77d8-48ff-b80d-0e3ec1142ed1] Assistant message added
+2025-06-08 13:00:02,147 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-08 13:05:16,255 | session_manager | INFO | New session started: 42210e3b-40d7-42ec-836c-b05c1b99e688
+2025-06-08 13:06:11,456 | __main__ | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] User asked: I want to know about Exception Handling
+2025-06-08 13:06:11,473 | session_manager | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] User message added
+2025-06-08 13:06:11,477 | backend_client | INFO | Sending query for session 42210e3b-40d7-42ec-836c-b05c1b99e688 to backend
+2025-06-08 13:06:14,192 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002A2E1DD76B0>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 13:06:34,106 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-08 13:06:34,106 | __main__ | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] Assistant response: Exception handling is a programming concept used to manage errors that occur dur...
+2025-06-08 13:06:34,110 | session_manager | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] Assistant message added
+2025-06-08 13:06:34,114 | ui_renderer | INFO | Displaying 5 reference URLs

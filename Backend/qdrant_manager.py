@@ -25,9 +25,10 @@ class QdrantManager:
                     if httpx.get(url).status_code == 200:
                         logger.info(f"Qdrant available at {host}")
                         return host
-                except httpx.ConnectError:
+                except httpx.ConnectError as e:
+                    logger.warning(f"Failed to connect to Qdrant at {host}: {e}")
                     time.sleep(delay)
-        raise ConnectionError("Qdrant is not available.")
+        raise ConnectionError("Qdrant is not available after multiple attempts.")
 
     def _wait_for_qdrant(self, port=6333, retries=10, delay=3):
         url = f"http://{self.host}:{port}/collections"
@@ -36,30 +37,42 @@ class QdrantManager:
                 if httpx.get(url).status_code == 200:
                     logger.info("Qdrant became available.")
                     return
-            except httpx.ConnectError:
+            except httpx.ConnectError as e:
+                logger.warning(f"Failed to connect to Qdrant: {e}")
                 time.sleep(delay)
-        raise ConnectionError("Qdrant did not become available.")
+        raise ConnectionError("Qdrant did not become available after retries.")
 
     def _ensure_collection(self):
         try:
             self.client.get_collection(self.collection_name)
             logger.info("Qdrant collection already exists.")
-        except Exception:
+        except Exception as e:
             logger.info("Creating new Qdrant collection.")
-            self.client.create_collection(
-                collection_name=self.collection_name,
-                vectors_config=VectorParams(size=384, distance=Distance.COSINE)
-            )
+            try:
+                self.client.create_collection(
+                    collection_name=self.collection_name,
+                    vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+                )
+            except Exception as e:
+                logger.error(f"Failed to create Qdrant collection: {e}")
+                raise ValueError("Failed to create or access Qdrant collection.")
 
     def add_texts(self, session_id, texts):
-        logger.info(f"Adding texts to Qdrant for session: {session_id}")
-        embeddings = self.embedder.encode(texts)
-        points = [{"id": i, "vector": emb, "payload": {"session_id": session_id, "text": text}}
-                  for i, (text, emb) in enumerate(zip(texts, embeddings))]
-        self.client.upsert(collection_name=self.collection_name, points=points)
+        try:
+            logger.info(f"Adding texts to Qdrant for session: {session_id}")
+            embeddings = self.embedder.encode(texts)
+            points = [{"id": i, "vector": emb, "payload": {"session_id": session_id, "text": text}} for i, (text, emb) in enumerate(zip(texts, embeddings))]
+            self.client.upsert(collection_name=self.collection_name, points=points)
+        except Exception as e:
+            logger.error(f"Error adding texts to Qdrant for session {session_id}: {e}")
+            raise ValueError("Failed to add texts to Qdrant.")
 
     def search_similar(self, query, session_id, k=5):
-        logger.info(f"Searching similar documents for session: {session_id}")
-        query_vector = self.embedder.encode([query])[0]
-        results = self.client.search(collection_name=self.collection_name, query_vector=query_vector, limit=k)
-        return [res.payload["text"] for res in results]
+        try:
+            logger.info(f"Searching similar documents for session: {session_id}")
+            query_vector = self.embedder.encode([query])[0]
+            results = self.client.search(collection_name=self.collection_name, query_vector=query_vector, limit=k)
+            return [res.payload["text"] for res in results]
+        except Exception as e:
+            logger.error(f"Error searching similar documents in Qdrant for session {session_id}: {e}")
+            raise ValueError("Failed to search similar documents in Qdrant.")

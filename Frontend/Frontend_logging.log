@@ -16,3 +16,13 @@
 2025-06-08 12:32:13,613 | __main__ | INFO | [Session 9c2a9183-0357-4674-a71c-9f605001fa36] Assistant response: Logging is essential for Python projects in production because it enables monito...
 2025-06-08 12:32:13,615 | session_manager | INFO | [Session 9c2a9183-0357-4674-a71c-9f605001fa36] Assistant message added
 2025-06-08 12:32:13,617 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-08 12:58:41,620 | session_manager | INFO | New session started: 14c094fb-2410-45cf-b97d-40cf3c6b2bb6
+2025-06-08 12:58:57,748 | __main__ | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] User asked: What are the uses of Exception Handling in python
+2025-06-08 12:58:57,750 | session_manager | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] User message added
+2025-06-08 12:58:57,750 | backend_client | INFO | Sending query for session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6 to backend
+2025-06-08 12:59:00,568 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x00000149F191F3B0>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 12:59:32,793 | backend_client | ERROR | Error contacting backend http://localhost:5001/query: HTTPConnectionPool(host='localhost', port=5001): Read timed out. (read timeout=30)
+2025-06-08 12:59:32,793 | backend_client | ERROR | All backend attempts failed.
+2025-06-08 12:59:32,793 | __main__ | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] Assistant response: The chatbot is currently offline or unreachable....
+2025-06-08 12:59:32,793 | session_manager | INFO | [Session 14c094fb-2410-45cf-b97d-40cf3c6b2bb6] Assistant message added
+2025-06-08 12:59:41,621 | session_manager | INFO | New session started: 593b1879-77d8-48ff-b80d-0e3ec1142ed1

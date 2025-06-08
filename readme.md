@@ -15,6 +15,8 @@ RAG-Chatbot
 │   ├── llm_wrapper.py            # LangChain-compatible wrapper for Google Gemini API
 │   ├── qdrant_manager.py         # Manages Qdrant vector DB: connection, collection, upsert, search
 │   ├── search_scraper.py         # DuckDuckGo search + web scraping utility
+|   ├── logging_config.py         # Files to set the config for logging
+|   ├── Backend_logging.log       # File used for logging
 │   ├── requirements.txt          # Python dependencies for backend
 │   └── Dockerfile                # Dockerfile to containerize backend Flask app
 │
@@ -23,6 +25,8 @@ RAG-Chatbot
 │   ├── backend_client.py         # Sends user queries to Flask backend and fetches responses
 │   ├── session_manager.py        # Manages session ID and chat history using Streamlit's state
 │   ├── ui_renderer.py            # Handles display of chat messages and reference links
+|   ├── logging_config.py         # Files to set the config for logging
+|   ├── Fackend_logging.log       # File used for logging
 │   ├── requirements.txt          # Python dependencies for frontend
 │   └── Dockerfile                # Dockerfile to containerize Streamlit frontend
 │

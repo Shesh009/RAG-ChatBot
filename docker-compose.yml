@@ -12,7 +12,7 @@ services:
 
   backend:
     build:
-      context: ./flask_app
+      context: ./Backend
       dockerfile: Dockerfile
     container_name: flask_backend
     ports:
@@ -26,7 +26,7 @@ services:
 
   frontend:
     build:
-      context: ./streamlit_app
+      context: ./Frontend
       dockerfile: Dockerfile
     container_name: streamlit_frontend
     ports:

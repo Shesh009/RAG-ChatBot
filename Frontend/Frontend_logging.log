@@ -43,3 +43,28 @@
 2025-06-08 13:06:34,106 | __main__ | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] Assistant response: Exception handling is a programming concept used to manage errors that occur dur...
 2025-06-08 13:06:34,110 | session_manager | INFO | [Session 42210e3b-40d7-42ec-836c-b05c1b99e688] Assistant message added
 2025-06-08 13:06:34,114 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-08 16:34:00,897 | session_manager | INFO | New session started: 80fd47ee-dcce-428d-b0b2-a2c268203f49
+2025-06-08 16:34:35,129 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User asked: What is streamlit
+2025-06-08 16:34:35,132 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User message added
+2025-06-08 16:34:35,133 | backend_client | INFO | Sending query for session 80fd47ee-dcce-428d-b0b2-a2c268203f49 to backend
+2025-06-08 16:34:37,844 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002556D107EF0>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 16:34:59,788 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-08 16:34:59,789 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant response: Streamlit is an open-source Python library that makes it easy to create and shar...
+2025-06-08 16:34:59,789 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant message added
+2025-06-08 16:34:59,789 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-08 16:35:37,234 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User asked: What is streamlit
+2025-06-08 16:35:37,236 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User message added
+2025-06-08 16:35:37,237 | backend_client | INFO | Sending query for session 80fd47ee-dcce-428d-b0b2-a2c268203f49 to backend
+2025-06-08 16:35:39,929 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002556D7873B0>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 16:36:11,969 | backend_client | ERROR | Error contacting backend http://localhost:5001/query: HTTPConnectionPool(host='localhost', port=5001): Read timed out. (read timeout=30)
+2025-06-08 16:36:11,969 | backend_client | ERROR | All backend attempts failed.
+2025-06-08 16:36:11,969 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant response: The chatbot is currently offline or unreachable....
+2025-06-08 16:36:11,969 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant message added
+2025-06-08 16:37:25,981 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User asked: dassssrt
+2025-06-08 16:37:25,984 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] User message added
+2025-06-08 16:37:25,984 | backend_client | INFO | Sending query for session 80fd47ee-dcce-428d-b0b2-a2c268203f49 to backend
+2025-06-08 16:37:28,685 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000002556D787050>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-08 16:38:00,739 | backend_client | ERROR | Error contacting backend http://localhost:5001/query: HTTPConnectionPool(host='localhost', port=5001): Read timed out. (read timeout=30)
+2025-06-08 16:38:00,739 | backend_client | ERROR | All backend attempts failed.
+2025-06-08 16:38:00,741 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant response: The chatbot is currently offline or unreachable....
+2025-06-08 16:38:00,741 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant message added

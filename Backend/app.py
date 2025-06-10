@@ -2,6 +2,13 @@ from flask import Flask, request, jsonify
 from chat_service import ChatService
 from logging_config import setup_logging
 import logging
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_API_KEY"] = os.getenv("LANGCHAIN_API_KEY")
 
 app = Flask(__name__)
 chat_service = ChatService()

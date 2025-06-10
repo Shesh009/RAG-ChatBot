@@ -87,7 +87,9 @@ pip install -r requirements.txt
 Create a .env file in the root directory and add the required details shown below :
 
 ```env
-GEMINI_API_KEY=your_google_gemini_api_key
+GEMINI_API_KEY = your_google_api_key
+LANGCHAIN_API_KEY = your_langsmith_api_key
+LANGCHAIN_PROJECT = your_project_name
 ```
 
 ---

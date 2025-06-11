@@ -94,7 +94,7 @@ LANGCHAIN_PROJECT = your_project_name
 
 ---
 
-## Running the Application
+## Running the Application 
 
 ### Option 1: Run Manually
 

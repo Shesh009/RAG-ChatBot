@@ -68,3 +68,30 @@
 2025-06-08 16:38:00,739 | backend_client | ERROR | All backend attempts failed.
 2025-06-08 16:38:00,741 | __main__ | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant response: The chatbot is currently offline or unreachable....
 2025-06-08 16:38:00,741 | session_manager | INFO | [Session 80fd47ee-dcce-428d-b0b2-a2c268203f49] Assistant message added
+2025-06-10 15:26:48,132 | session_manager | INFO | New session started: 2740fa73-6d72-4b1b-820b-9e8ee96d8d26
+2025-06-10 15:28:26,118 | __main__ | INFO | [Session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26] User asked: How to convert a normal python code to Object-oriented code.
+2025-06-10 15:28:26,121 | session_manager | INFO | [Session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26] User message added
+2025-06-10 15:28:26,123 | backend_client | INFO | Sending query for session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26 to backend
+2025-06-10 15:28:28,855 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001E0F10CB740>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-10 15:28:51,287 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-10 15:28:51,288 | __main__ | INFO | [Session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26] Assistant response: Here's a breakdown of how to convert procedural Python code to object-oriented c...
+2025-06-10 15:28:51,288 | session_manager | INFO | [Session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26] Assistant message added
+2025-06-10 15:28:51,291 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-10 15:30:02,977 | session_manager | INFO | New session started: c25c2bc3-3e39-45fc-b9a7-fec7ee95a499
+2025-06-10 15:30:05,562 | __main__ | INFO | [Session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499] User asked: How to convert a normal python code to Object-oriented code.
+2025-06-10 15:30:05,612 | session_manager | INFO | [Session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499] User message added
+2025-06-10 15:30:05,627 | backend_client | INFO | Sending query for session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499 to backend
+2025-06-10 15:30:08,349 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001E0F1224230>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-10 15:30:21,150 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-10 15:30:21,150 | __main__ | INFO | [Session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499] Assistant response: To convert procedural code to object-oriented code in Python, you can follow the...
+2025-06-10 15:30:21,150 | session_manager | INFO | [Session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499] Assistant message added
+2025-06-10 15:30:21,150 | ui_renderer | INFO | Displaying 5 reference URLs
+2025-06-10 15:32:11,264 | session_manager | INFO | New session started: 5f99c51b-8530-4631-98e7-39d62097f931
+2025-06-10 15:32:35,925 | __main__ | INFO | [Session 5f99c51b-8530-4631-98e7-39d62097f931] User asked: What is WSGI Server mentioned in Flask framework.
+2025-06-10 15:32:35,926 | session_manager | INFO | [Session 5f99c51b-8530-4631-98e7-39d62097f931] User message added
+2025-06-10 15:32:35,926 | backend_client | INFO | Sending query for session 5f99c51b-8530-4631-98e7-39d62097f931 to backend
+2025-06-10 15:32:38,617 | backend_client | ERROR | Error contacting backend http://flask_backend:5001/query: HTTPConnectionPool(host='flask_backend', port=5001): Max retries exceeded with url: /query (Caused by NameResolutionError("<urllib3.connection.HTTPConnection object at 0x000001E0F1167680>: Failed to resolve 'flask_backend' ([Errno 11001] getaddrinfo failed)"))
+2025-06-10 15:32:52,236 | backend_client | INFO | Successful response from backend at http://localhost:5001/query
+2025-06-10 15:32:52,236 | __main__ | INFO | [Session 5f99c51b-8530-4631-98e7-39d62097f931] Assistant response: A WSGI (Web Server Gateway Interface) server implements the web server side of t...
+2025-06-10 15:32:52,236 | session_manager | INFO | [Session 5f99c51b-8530-4631-98e7-39d62097f931] Assistant message added
+2025-06-10 15:32:52,241 | ui_renderer | INFO | Displaying 5 reference URLs

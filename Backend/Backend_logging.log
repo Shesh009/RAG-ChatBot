@@ -108,3 +108,52 @@
 2025-06-08 16:35:41,962 | chat_service | INFO | Handling user query for session: 80fd47ee-dcce-428d-b0b2-a2c268203f49
 2025-06-08 16:37:30,725 | __main__ | INFO | Incoming query: 'dassssrt' | Session: 80fd47ee-dcce-428d-b0b2-a2c268203f49
 2025-06-08 16:37:30,725 | chat_service | INFO | Handling user query for session: 80fd47ee-dcce-428d-b0b2-a2c268203f49
+2025-06-10 15:27:24,274 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-10 15:27:24,317 | werkzeug | INFO |  * Restarting with watchdog (windowsapi)
+2025-06-10 15:27:50,487 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-10 15:27:50,499 | werkzeug | WARNING |  * Debugger is active!
+2025-06-10 15:27:50,512 | werkzeug | INFO |  * Debugger PIN: 447-936-445
+2025-06-10 15:27:50,757 | werkzeug | WARNING |  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-06-10 15:27:50,757 | werkzeug | INFO |  * Running on http://10.10.95.27:5001/ (Press CTRL+C to quit)
+2025-06-10 15:28:30,917 | __main__ | INFO | Incoming query: 'How to convert a normal python code to Object-oriented code.' | Session: 2740fa73-6d72-4b1b-820b-9e8ee96d8d26
+2025-06-10 15:28:30,919 | chat_service | INFO | Handling user query for session: 2740fa73-6d72-4b1b-820b-9e8ee96d8d26
+2025-06-10 15:28:33,208 | search_scraper | INFO | Searching DuckDuckGo for: How do I convert existing, procedural Python code into object-oriented Python code?
+2025-06-10 15:28:34,318 | search_scraper | INFO | Found 5 URLs
+2025-06-10 15:28:34,333 | search_scraper | INFO | Scraping content from 5 URLs
+2025-06-10 15:28:41,038 | qdrant_manager | INFO | Adding texts to Qdrant for session: 2740fa73-6d72-4b1b-820b-9e8ee96d8d26
+2025-06-10 15:28:41,708 | httpx | INFO | HTTP Request: PUT http://localhost:6333/collections/chat_history/points?wait=true "HTTP/1.1 200 OK"
+2025-06-10 15:28:41,709 | qdrant_manager | INFO | Searching similar documents for session: 2740fa73-6d72-4b1b-820b-9e8ee96d8d26
+2025-06-10 15:28:41,754 | httpx | INFO | HTTP Request: POST http://localhost:6333/collections/chat_history/points/search "HTTP/1.1 200 OK"
+2025-06-10 15:28:51,266 | chat_service | INFO | Query handled successfully for session 2740fa73-6d72-4b1b-820b-9e8ee96d8d26.
+2025-06-10 15:28:51,266 | werkzeug | INFO | 127.0.0.1 - - [10/Jun/2025 15:28:51] "POST /query HTTP/1.1" 200 -
+2025-06-10 15:30:10,374 | __main__ | INFO | Incoming query: 'How to convert a normal python code to Object-oriented code.' | Session: c25c2bc3-3e39-45fc-b9a7-fec7ee95a499
+2025-06-10 15:30:10,374 | chat_service | INFO | Handling user query for session: c25c2bc3-3e39-45fc-b9a7-fec7ee95a499
+2025-06-10 15:30:11,402 | search_scraper | INFO | Searching DuckDuckGo for: How can I convert a procedural or functional Python program into an object-oriented program? What are the general principles and best practices for refactoring existing Python code to use classes, objects, inheritance, and polymorphism?
+2025-06-10 15:30:12,615 | search_scraper | INFO | Found 5 URLs
+2025-06-10 15:30:12,615 | search_scraper | INFO | Scraping content from 5 URLs
+2025-06-10 15:30:18,518 | qdrant_manager | INFO | Adding texts to Qdrant for session: c25c2bc3-3e39-45fc-b9a7-fec7ee95a499
+2025-06-10 15:30:18,702 | httpx | INFO | HTTP Request: PUT http://localhost:6333/collections/chat_history/points?wait=true "HTTP/1.1 200 OK"
+2025-06-10 15:30:18,703 | qdrant_manager | INFO | Searching similar documents for session: c25c2bc3-3e39-45fc-b9a7-fec7ee95a499
+2025-06-10 15:30:18,744 | httpx | INFO | HTTP Request: POST http://localhost:6333/collections/chat_history/points/search "HTTP/1.1 200 OK"
+2025-06-10 15:30:21,150 | chat_service | INFO | Query handled successfully for session c25c2bc3-3e39-45fc-b9a7-fec7ee95a499.
+2025-06-10 15:30:21,150 | werkzeug | INFO | 127.0.0.1 - - [10/Jun/2025 15:30:21] "POST /query HTTP/1.1" 200 -
+2025-06-10 15:31:43,370 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-10 15:31:43,418 | werkzeug | INFO |  * Restarting with watchdog (windowsapi)
+2025-06-10 15:32:03,433 | __main__ | INFO | Starting Flask app on port 5001
+2025-06-10 15:32:03,438 | werkzeug | WARNING |  * Debugger is active!
+2025-06-10 15:32:03,450 | werkzeug | INFO |  * Debugger PIN: 447-936-445
+2025-06-10 15:32:03,620 | werkzeug | WARNING |  * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+2025-06-10 15:32:03,620 | werkzeug | INFO |  * Running on http://10.10.95.27:5001/ (Press CTRL+C to quit)
+2025-06-10 15:32:40,654 | __main__ | INFO | Incoming query: 'What is WSGI Server mentioned in Flask framework.' | Session: 5f99c51b-8530-4631-98e7-39d62097f931
+2025-06-10 15:32:40,654 | chat_service | INFO | Handling user query for session: 5f99c51b-8530-4631-98e7-39d62097f931
+2025-06-10 15:32:41,684 | search_scraper | INFO | Searching DuckDuckGo for: What is a WSGI (Web Server Gateway Interface) server, and what role does it play within the Flask web framework?
+2025-06-10 15:32:43,103 | search_scraper | INFO | Found 5 URLs
+2025-06-10 15:32:43,103 | search_scraper | INFO | Scraping content from 5 URLs
+2025-06-10 15:32:48,444 | qdrant_manager | INFO | Adding texts to Qdrant for session: 5f99c51b-8530-4631-98e7-39d62097f931
+2025-06-10 15:32:49,145 | httpx | INFO | HTTP Request: PUT http://localhost:6333/collections/chat_history/points?wait=true "HTTP/1.1 200 OK"
+2025-06-10 15:32:49,145 | qdrant_manager | INFO | Searching similar documents for session: 5f99c51b-8530-4631-98e7-39d62097f931
+2025-06-10 15:32:49,205 | httpx | INFO | HTTP Request: POST http://localhost:6333/collections/chat_history/points/search "HTTP/1.1 200 OK"
+2025-06-10 15:32:52,231 | chat_service | INFO | Query handled successfully for session 5f99c51b-8530-4631-98e7-39d62097f931.
+2025-06-10 15:32:52,231 | werkzeug | INFO | 127.0.0.1 - - [10/Jun/2025 15:32:52] "POST /query HTTP/1.1" 200 -
